@@ -1,0 +1,40 @@
+<div class="row">
+    <div class = "card" *ngFor="let i of gallery" style="width: 22rem;" >
+        <img class = "card-img-top" src="assets/{{ i.image }}.jpg" alt="Card image cap" >
+        <div class="card-body">
+          <div *ngIf="!i.showDetails">
+            <h5 class="card-title">
+              <span>
+                {{i.name}}
+              </span>
+            </h5>
+            <h6>
+              {{ i.price | currency:'USD'}}
+              
+            </h6>
+            
+            <hr>
+
+            <button class="btn btn-sm btn-success"
+            *ngIf="!i.showDetails"
+            (click)="i.showDetails=!i.showDetails">
+            Details
+           </button>
+
+          </div>
+
+          <div *ngIf="i.showDetails">
+            <div class="details">
+              <p>
+                {{i.description}}
+              </p>
+              <hr>
+              <button class="btn btn-sm btn-danger"
+              (click)="i.showDetails=!i.showDetails">
+            Close
+            </button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

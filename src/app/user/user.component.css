@@ -1,0 +1,12 @@
+.row {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.card-body {
+    background-color: rgba(214, 221, 230, 0.377);
+ 
+}
+
+.card {
+    margin: 10px;
+}
